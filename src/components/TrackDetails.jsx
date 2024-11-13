@@ -1,6 +1,6 @@
 
 
-export default function TrackDetails({ selected, handleFormView, handleDeleteTrack }) {
+export default function TrackDetails({ selected, handleFormView, handleDeleteTrack, handleDetailsView }) {
 
   return !selected ? ('') : (
     <div className="details">
@@ -18,6 +18,7 @@ export default function TrackDetails({ selected, handleFormView, handleDeleteTra
         <button onClick={() => handleDeleteTrack(selected._id)}>
           Delete
         </button>
+        <button onClick={() => handleDetailsView(selected)}>Close</button>
 
 
       </ul>

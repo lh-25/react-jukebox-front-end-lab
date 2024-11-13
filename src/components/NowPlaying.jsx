@@ -1,6 +1,6 @@
 
 
-export default function NowPlaying({ playing }) {
+export default function NowPlaying({ playing, handlePlayingView }) {
 
   return !playing ? ('') : (
     <div className="now-playing-bar">
@@ -10,6 +10,7 @@ export default function NowPlaying({ playing }) {
           <li> <strong className="labels">Title:</strong> {playing.title}</li>
           <li><strong className="labels">Artist:</strong> {playing.artist}</li>
           <li><strong className="labels">Duration:</strong>  {playing.duration}</li>
+          <button onClick={handlePlayingView}>Stop Playing</button>
         </ul>
       </div>
     </div>

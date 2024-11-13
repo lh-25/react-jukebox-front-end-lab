@@ -32,13 +32,21 @@ export default function App() {
   const updateSelected = (track) => {
     setSelected(track)
   }
-  const updatePlaying = (track) => {
-    setPlaying(track)
-  }
+  const handleDetailsView = (track) => {
+    if (!track.title) setSelected(null)
+    setSelected(!selected)
+  } 
 
   const handleFormView = (track) => {
     if (!track.title) setSelected(null)
     setIsFormOpen(!isFormOpen)
+  }
+  const updatePlaying = (track) => {
+    setPlaying(track)
+  }
+  const handlePlayingView = (track) => {
+    if (!track.title) setSelected(null)
+    setPlaying(!playing)
   }
 
   const handleAddTrack = async (formData) => {
@@ -109,9 +117,11 @@ export default function App() {
         selected={selected}
         handleFormView={handleFormView}
         handleDeleteTrack={handleDeleteTrack}
+        handleDetailsView={handleDetailsView}
       />}
       <NowPlaying
         playing={playing}
+        handlePlayingView={handlePlayingView}
       />
     </>
 
